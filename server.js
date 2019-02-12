@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 //assign a port number to listen on, PORT in caps by convention
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 
 //define actions to be performed when GET request is made
 //     home dir ,request  response
