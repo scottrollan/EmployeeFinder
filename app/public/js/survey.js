@@ -42,8 +42,18 @@ const formSubmit = function (e) {
 
 
 //hides error message on page load
-$(document).ready(function() {
-    $('#error').hide();
- });
- 
- $('#submit').on('click', formSubmit);
+const hideError = function (){
+    $(document).ready(function() {
+        $('#error').hide();
+    });
+};
+
+hideError();
+$('#submit').on('click', formSubmit);
+
+module.exports = {
+    formSubmit: formSubmit(),
+    //accepts name and pic path, pushes 10 answers to array
+    hideError: hideError()
+    //hides the error message on page open
+};
