@@ -1,23 +1,23 @@
 $(function () {
 
     const formSubmit = function () {
-        const answers = [];
+        const scores = [];
         const employeeName = $('#name').val().trim();
         const photoURL = $('#photo').val().trim();
         var complete = 1;
-        answers.push($('#q1').val());
-        answers.push($('#q2').val());
-        answers.push($('#q3').val());
-        answers.push($('#q4').val());
-        answers.push($('#q5').val());
-        answers.push($('#q6').val());
-        answers.push($('#q7').val());
-        answers.push($('#q8').val());
-        answers.push($('#q9').val());
-        answers.push($('#q10').val());
+        scores.push($('#q1').val());
+        scores.push($('#q2').val());
+        scores.push($('#q3').val());
+        scores.push($('#q4').val());
+        scores.push($('#q5').val());
+        scores.push($('#q6').val());
+        scores.push($('#q7').val());
+        scores.push($('#q8').val());
+        scores.push($('#q9').val());
+        scores.push($('#q10').val());
         // console.log(employeeName, photoURL,answers);
-        for(let i =0; i<answers.length; i++){
-            let answer = answers[i];
+        for(let i =0; i<scores.length; i++){
+            let answer = scores[i];
             if(answer === null){
                 console.log("invalid response");
                 complete = complete - 1;
@@ -40,70 +40,70 @@ $(function () {
         else {
             $('#error').hide();
 
-            const addEmployee = function(event) {
-                // event.preventDefault();
+        //     const addEmployee = function(event) {
+        //         // event.preventDefault();
             
-                const newEmployee = {
-                    name: employeeName,
-                    photo: photoURL,
-                    scores: answers
-                };
-                console.log(newEmployee);
-                //CODE for finding the closest matched employee
-                $.ajax({
-                    method: 'GET',
-                    url: '/api/employeeList',
-                    }).then(function (array) {
-                        let employeeList = empArray;
-                        console.log(empArray);
-                        return employeeList});
+        //         const newEmployee = {
+        //             name: employeeName,
+        //             photo: photoURL,
+        //             scores: answers
+        //         };
+        //         console.log(newEmployee);
+        //         //CODE for finding the closest matched employee
+        //         $.ajax({
+        //             method: 'GET',
+        //             url: '/api/employeeList',
+        //             }).then(function (array) {
+        //                 let employeeList = empArray;
+        //                 console.log(empArray);
+        //                 return employeeList});
 
-                for(let i=0; i<employeeList.length; i++) {
-                    let difference = 0;
-                    let smallestDifference = 40;
-                    let pic = '';
-                    let empName = '';
-                    difference = Math.abs((employeeList[i].scores[0])-(newEmployee.scores[0]));
-                    difference = difference + (Math.abs((employeeList[i].scores[1])-(newEmployee.scores[1])));
-                    difference = difference + (Math.abs((employeeList[i].scores[2])-(newEmployee.scores[2])));
-                    difference = difference + (Math.abs((employeeList[i].scores[3])-(newEmployee.scores[3])));
-                    difference = difference + (Math.abs((employeeList[i].scores[4])-(newEmployee.scores[4])));
-                    difference = difference + (Math.abs((employeeList[i].scores[5])-(newEmployee.scores[5])));
-                    difference = difference + (Math.abs((employeeList[i].scores[6])-(newEmployee.scores[6])));
-                    difference = difference + (Math.abs((employeeList[i].scores[7])-(newEmployee.scores[7])));
-                    difference = difference + (Math.abs((employeeList[i].scores[8])-(newEmployee.scores[8])));
-                    difference = difference + (Math.abs((employeeList[i].scores[9])-(newEmployee.scores[9])));
-                    if(difference < smallestDifference){
-                        pic = employeeList[i].photo;
-                        empName = employeeList[i].name;
-                        smallestDifference = difference;
-                    }
-                    console.log(difference);
-                    console.log(empName);
-                    console.log(pic);
-                    console.log(smallestDifference);                
-                }//end for loop     
-                //reset survey fields
-                $('#name').val('');
-                $('#photo').val(''); 
-                $('#q1').val('');
-                $('#q2').val('');
-                $('#q3').val('');
-                $('#q4').val('');
-                $('#q5').val('');
-                $('#q6').val('');
-                $('#q7').val('');
-                $('#q8').val('');
-                $('#q9').val('');
-                $('#q10').val('');
+        //         for(let i=0; i<employeeList.length; i++) {
+        //             let difference = 0;
+        //             let smallestDifference = 40;
+        //             let pic = '';
+        //             let empName = '';
+        //             difference = Math.abs((employeeList[i].scores[0])-(newEmployee.scores[0]));
+        //             difference = difference + (Math.abs((employeeList[i].scores[1])-(newEmployee.scores[1])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[2])-(newEmployee.scores[2])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[3])-(newEmployee.scores[3])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[4])-(newEmployee.scores[4])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[5])-(newEmployee.scores[5])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[6])-(newEmployee.scores[6])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[7])-(newEmployee.scores[7])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[8])-(newEmployee.scores[8])));
+        //             difference = difference + (Math.abs((employeeList[i].scores[9])-(newEmployee.scores[9])));
+        //             if(difference < smallestDifference){
+        //                 pic = employeeList[i].photo;
+        //                 empName = employeeList[i].name;
+        //                 smallestDifference = difference;
+        //             }
+        //             console.log(difference);
+        //             console.log(empName);
+        //             console.log(pic);
+        //             console.log(smallestDifference);                
+        //         }//end for loop     
+        //         //reset survey fields
+        //         $('#name').val('');
+        //         $('#photo').val(''); 
+        //         $('#q1').val('');
+        //         $('#q2').val('');
+        //         $('#q3').val('');
+        //         $('#q4').val('');
+        //         $('#q5').val('');
+        //         $('#q6').val('');
+        //         $('#q7').val('');
+        //         $('#q8').val('');
+        //         $('#q9').val('');
+        //         $('#q10').val('');
 
-                $.ajax({
-                method: 'POST',
-                url: '/api/employeeList',
-                data: newEmployee
-                })
-            };//end addEmployee
-        addEmployee();
+        //         $.ajax({
+        //         method: 'POST',
+        //         url: '/api/employeeList',
+        //         data: newEmployee
+        //         })
+        //     };//end addEmployee
+        // addEmployee();
         };//end else 
     };//end formSubmit
 
