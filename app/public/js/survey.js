@@ -53,8 +53,12 @@ $(function () {
                 $.ajax({
                     method: 'GET',
                     url: '/api/employeeList',
-                    })
-                for(let i=0; i<employeeList; i++) {
+                    }).then(function (array) {
+                        let employeeList = empArray;
+                        console.log(empArray);
+                        return employeeList});
+
+                for(let i=0; i<employeeList.length; i++) {
                     let difference = 0;
                     let smallestDifference = 40;
                     let pic = '';

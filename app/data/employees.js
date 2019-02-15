@@ -34,7 +34,7 @@ var employeeList = [
         ]
     },
     {
-        name: "The Green Arros (Oliver Queen)",
+        name: "The Green Arrow a.k.a. Oliver Queen",
         photo: "https://static.webshopapp.com/shops/002090/files/174853571/arrow-real-master-series-action-figure-1-8-green-a.jpg",
         scores: [
            4,
@@ -79,6 +79,22 @@ var employeeList = [
             2,
             3,
             4
+        ]
+    },
+    {
+        name: "Kimmy Schmidt, the unbreakable",
+        photo: "https://pixel.nymag.com/imgs/daily/vulture/2018/05/29/29-unbreakable-kimmy-schmidt.w700.h700.jpg",
+        scores: [
+            1,
+            5,
+            5,
+            5,
+            3,
+            5,
+            5,
+            3,
+            5,
+            5
         ]
     }
 ]
