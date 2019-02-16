@@ -1,6 +1,6 @@
 // This array will hold all the employees and their scores
 
-var employeeList = [
+var employees = [
     {
         name:   "Ahmed",
         photo:  "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
@@ -99,4 +99,4 @@ var employeeList = [
     }
 ]
 
-module.exports = employeeList;
+module.exports = employees;

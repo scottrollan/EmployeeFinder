@@ -1,7 +1,7 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
-const path = require('path');
 // const survey = require(path.join(__dirname + 'app/public/survey.js'));
 
 const PORT = process.env.PORT || 3000;
