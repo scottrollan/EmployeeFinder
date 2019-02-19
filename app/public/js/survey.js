@@ -1,25 +1,26 @@
+console.log("is this thing on?");
 $(function () {
     const validateForm = function() {
-        let isValid = true;  
-
-        $('input').each(function() {
+        let invalid = true;  
+        $('.input').each(function(){
             if(!$(this).val()) {
-                isValid = false;
+                invalid = false;
             }
         });
+
         $('.custom-select').each(function(i, element) {
             if(!$(this).val()) {
-                isValid = false;
+                invalid = false;
             }
         });
-        return isValid;
+        console.log(invalid);
+        return invalid;
     }
 
     const displayModal = function(data) {
-        $('#match-name').text(data.name);
-        $('#match-image').attr('src', data.photo);
-
-        $('#results-modal').modal('show');
+        $('match-name').text(data.name);
+        $('match-image').attr('src', data.photo);
+        $('#results-modal').toggle;
     }
 
     const submit = function(e) {

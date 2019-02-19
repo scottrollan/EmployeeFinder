@@ -2,24 +2,21 @@ let employees = require('../data/employees.js');
 
 //GET the employees
 module.exports = function (app) {
-  app.get('/api/employees', function (req, res) {
-      res.json(employees);
-  });
-  
-  // process after user submit
-  app.post('/api/employees', function(req, res) {
+    app.get('/api/employees', function (req, res) {
+        res.json(employees);
+    });
+    
+    app.post('/api/employees', function(req, res) {
       const bestMatch = {
-      name: '',
-      photo: '',
-      employeeDifference: 41
-    }
-  
+        name: '',
+        photo: '',
+        employeeDifference: Infinity
+    };
+    
     const userData = req.body;
     const userScores = userData.scores;
-    
     let totalDifference;
 
-    //loop through the already set-up employees list
     for(let i=0; i<employees.length; i++) {
       const currentEmployee = employees[i];
       totalDifference = 0;
